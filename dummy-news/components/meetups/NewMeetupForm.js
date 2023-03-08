@@ -8,6 +8,7 @@ function NewMeetupForm(props) {
   const imageInputRef = useRef();
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
+  const formRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
@@ -25,11 +26,12 @@ function NewMeetupForm(props) {
     };
 
     props.onAddMeetup(meetupData);
+    formRef.current.reset();
   }
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
+      <form ref={formRef} className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='title'>Meetup Title</label>
           <input type='text' required id='title' ref={titleInputRef} />
