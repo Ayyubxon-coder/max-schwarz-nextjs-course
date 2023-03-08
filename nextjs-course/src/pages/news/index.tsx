@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 const NewsPage = () => {
   return (
-    <>
+    <Fragment>
       <h1>The news page</h1>
       <ul>
         <li>
@@ -10,7 +11,7 @@ const NewsPage = () => {
         </li>
         <li>something else</li>
       </ul>
-    </>
+    </Fragment>
   );
 };
 
